@@ -2,10 +2,11 @@
 
 {% block content %}
 <div class="posts">
+
     {% for post in post_list %}
         <section class="post">
             <header class="post-header">
-                <h2 class="post-title"><a href="/{{ post.id }}/">{{ post.title }}</a></h2>
+                <h2 class="post-title"><a href="{{ post.id }}">{{ post.title }}</a></h2>
 
                     <p class="post-meta">
                         Publish Time:  <a class="post-author" href="#">{{ post.publish_time |date:"Y/m/d"}}</a> Category: <a class="post-category post-category-js" href="#">{{ post.category }}</a>
@@ -14,11 +15,28 @@
 
                 <div class="post-description">
                     <p>
-                        {{ post.content }}
+                        {{ post.content|truncatechars:70 }}
                     </p>
                 </div>
-                <a class="pure-button" href="/{{ post.id }}/">Read More >>> </a>
+                <a class="pure-button" href="{{ post.id }}">Read More >>> </a>
         </section>
     {% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if post_list.has_previous %}
+            <a href="?page={{ post_list.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ post_list.number }} of {{ post_list.paginator.num_pages }}
+        </span>
+
+        {% if post_list.has_next %}
+            <a href="?page={{ post_list.next_page_number }}">Next</a>
+        {% endif %}
+    </span>
+</div>
+
 </div>
 {% endblock %}

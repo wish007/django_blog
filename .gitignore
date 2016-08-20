@@ -8,3 +8,6 @@ __pycache__/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# 忽略 Django 生成的模型迁移至数据库的文件夹
+migrations/
