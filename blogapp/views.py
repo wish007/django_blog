@@ -23,3 +23,11 @@ def detail(request, id):
     except Article.DoesNotExist:
         raise Http404
     return render(request, 'post.html', {'post' : post})
+
+def archives(request):
+    post_list = Article.objects.values('id', 'title', 'category', 'publish_time')
+    return render(request, 'archives.html', {'post_list' : post_list})
+
+def categories(request):
+    post_list = Article.objects.values('category')
+    return render(request, 'categories.html', {'post_list' : post_list})
