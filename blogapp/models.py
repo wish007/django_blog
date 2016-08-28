@@ -12,7 +12,7 @@ class Article(models.Model):
 
     class Meta:
         db_table = 'article'  #数据库表名
-        ordering = ['-publish_time']  # 按发布日期倒序排列
+        ordering = ['-id']  # 按创建时分配的 id 倒序排列
 
     def __str__(self):
         return self.title
