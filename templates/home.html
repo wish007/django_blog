@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load custom_markdown %}
 
 {% block content %}
 <div class="posts">
@@ -15,11 +16,11 @@
 
                 <div class="post-description">
                     <p>
-                        {{ post.content|truncatechars:70 }}
+                        {{ post.content|custom_markdown|truncatewords_html:50 }}
                     </p>
                 </div>
-                <a class="pure-button" href="/{{ post.id }}/">Read More >>> </a>
-            <h1 class="content-subhead"></h1>
+                <h1 class="content-subhead"></h1>
+                <a class="pure-button pure-button-primary" href="/{{ post.id }}/">Read More >>> </a>
         </section>
     {% endfor %}
 
