@@ -15,6 +15,12 @@ A blog development by Django.
 
 
 
+# 效果展示
+
+![Django Blog](https://github.com/wish007/django_blog/blob/master/README_IMG/archives.png)
+
+
+
 # TO DO
 
 - 增加 ABOUT ME 页面
