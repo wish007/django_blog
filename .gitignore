@@ -11,3 +11,6 @@ Desktop.ini
 
 # 忽略 Django 生成的模型迁移至数据库的文件夹
 migrations/
+
+# 忽略 SQLite 数据库文件
+*.db
