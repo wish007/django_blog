@@ -29,5 +29,10 @@ def archives(request):
     return render(request, 'archives.html', {'post_list' : post_list})
 
 def categories(request):
-    post_list = Article.objects.values('category')
-    return render(request, 'categories.html', {'post_list' : post_list})
+    category = Article.objects.values('category')
+    empty_list = []
+    for c in category:
+        for tag in c['category'].split(','):
+            empty_list.append(tag)
+    tags = set(empty_list)
+    return render(request, 'categories.html', {'tags': tags})

@@ -5,8 +5,8 @@
         <section class="post">
             <header class="post-header">
                     <p class="post-meta">
-                        {% for post in post_list %}
-                            <a class="post-category post-category-yui" href="#">{{ post.category }}</a>
+                        {% for tag in tags %}
+                            <a class="post-category post-category-yui" href="#">{{ tag }}</a>
                             <h1 class="content-subhead"></h1>
                         {% endfor %}
                     </p>
