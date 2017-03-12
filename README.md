@@ -24,5 +24,5 @@ A blog development by Django.
 # TO DO
 
 - 增加 ABOUT ME 页面
-- 优化 CATEGORIES 页面
+- 优化 CATEGORIES 页面（完成）
 - 将博客部署到 VPS（完成）
